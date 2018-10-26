@@ -1,0 +1,19 @@
+<div class="row">
+
+  <div class="col-md-3" *ngFor="let filme of filmes">
+    <div class="card conteudo" [routerLink]="['/interno/detalhar', filme.imdbID]" style="cursor: pointer">
+      <img class="card-img-top" [src]="filme.Poster" width="300px" height="447px">
+      <div class="overlay">
+        <div class="text">{{ filme.Title }}</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="div-fab" *ngIf="titulo && !filmes.length">
+  <a class="fab fab-btn-large" (click)="getFilmesDaNuvem()">
+    <i class="fa fa-refresh" aria-hidden="true"></i>
+  </a>
+</div>

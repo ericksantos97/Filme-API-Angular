@@ -1,0 +1,47 @@
+<h3>
+  Comentários sobre o filme
+</h3>
+
+<div class="list-group shadow-lg p-3 mb-5 bg-white rounded">
+
+
+  <div *ngFor="let c of comentarios" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ c.usuario.usuario }}</h5>
+      <small class="text-muted"> em {{ c.data }}
+        <span class="red font-size-20 click" (click)="excluir(c.id)" *ngIf="c.usuario.id === usuarioLogado.id">
+            &times;
+        </span>
+      </small>
+    </div>
+    <p class="mb-1">{{ c.descricao }}</p>
+  </div>
+
+  <div class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ usuarioLogado.usuario }}</h5>
+    </div>
+    <div class="mb-1">
+
+      <form [formGroup]="formCadastro" (submit)="cadastrar(formCadastro.value)" novalidate>
+        <div class="form-group">
+          <label for="txtComentario">Deixe um comentário</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="txtComentario" placeholder="Escreva..." formControlName="descricao" autocomplete="off"
+              [class.is-valid]="formCadastro.controls['descricao'].touched && formCadastro.controls['descricao'].valid" 
+              [class.is-invalid]="formCadastro.controls['descricao'].touched && formCadastro.controls['descricao'].invalid" />
+            <div class="input-group-append">
+              <button class="btn btn-success" [disabled]="formCadastro.invalid" type="submit">Salvar</button>
+            </div>
+          </div>
+          <div class="invalid-feedback invertido" *ngIf="formCadastro.controls['descricao'].invalid && formCadastro.controls['descricao'].touched">
+            <p *ngIf="formCadastro.controls['descricao'].errors?.required">Campo obrigatório</p>
+            <p *ngIf="formCadastro.controls['descricao'].errors?.maxlength">Limite de 2000 caracteres</p>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>

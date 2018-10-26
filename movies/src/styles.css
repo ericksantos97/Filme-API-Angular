@@ -1,0 +1,60 @@
+.invalid-feedback p {
+    margin-bottom: -2px !important;
+}
+
+.invalid-feedback {
+    display: inline !important;
+}
+  
+.invalid-feedback p:before {
+    content: " • ";
+}
+
+.invertido p {
+    background-color: #ff000073 !important;
+    color: #ffffff !important;
+    border-radius: 7px !important;
+}
+
+.click {
+    cursor: pointer;
+}
+
+.div-fab {
+  position: fixed;
+  bottom: 0px;
+  right: 24px;
+  height: 70px;
+}
+ 
+.fab {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #007bff;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s ease-out;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+ 
+.fab:hover {
+  background-color: #2f639a;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+.fab-btn-large {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: #FFF !important;
+}
+
+.red {
+    color: rgb(255, 0, 0);
+}
+    
